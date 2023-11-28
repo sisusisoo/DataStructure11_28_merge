@@ -8,6 +8,16 @@ int c_total, m_total;
 int once;//처음 한번의 싸이클에서만 출력되게 
 
 
+
+//정렬현황용
+void print_all(int list[]) {
+    for (int i = 0; i < MAX_SIZE; i++) {
+        printf("%d->", list[i]);
+
+    }
+    printf("\n");
+}
+
 // i: 정렬된 왼쪽 리스트에 대한 인덱스
 // j: 정렬된 오른쪽 리스트에 대한 인덱스
 // k: 정렬될 리스트에 대한 인덱스
@@ -49,6 +59,7 @@ void merge(int list[], int left, int mid, int right) {
         list[l] = sorted[l];
        // move_count++;
     }
+   if(once==0) print_all(list);
 }
 
 // 합병 정렬
